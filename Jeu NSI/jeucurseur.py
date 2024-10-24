@@ -65,8 +65,8 @@ while True:
 
 
     if regeneration==True :
-        pos_l_carre=round(randint(6,290),-1)         #Génere la valeur qui servira pour la position du carré en longeur
-        pos_h_carre=round(randint(6,290),-1)       #Génere la valeur qui servira pour la position du carré en hauteur
+        pos_l_carre=round(randint(5,285),-1)         #Génere la valeur qui servira pour la position du carré en longeur
+        pos_h_carre=round(randint(5,285),-1)       #Génere la valeur qui servira pour la position du carré en hauteur
         T1=temps_ecoule
         regeneration=False
     pygame.draw.rect(mafenetre, (0,0,255),(pos_l_carre,pos_h_carre,10,10),0)        #Fait apparaitre le carré avec les positions généré
@@ -76,7 +76,7 @@ while True:
         son=pygame.mixer.Sound('bruitpointjeu.wav')
         son.play(loops=0, maxtime=0, fade_ms=0)
         T2=temps_ecoule
-        if T2-T1<5:
+        if T2-T1<3:
             score=score+1
         regeneration=True                       #Réactive l'apparition du carré
 
