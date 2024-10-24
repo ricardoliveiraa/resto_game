@@ -29,9 +29,6 @@ T1=1
 T2=7
 regeneration=True
 
-print(im.format, im.size , im.mode)
-
-im.show()
 
 police=pygame.font.Font(None,20)
 position_text=(10,305)
