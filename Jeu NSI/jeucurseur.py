@@ -42,8 +42,8 @@ while True:
 
     # Mise à jour de l'affichage de la fenêtre
     mafenetre.fill((0,0,0))
-    pygame.draw.rect(mafenetre, (255,0,0),(0,h1,300,10),0)                  #Définit la barre horizontal
-    pygame.draw.rect(mafenetre, (255,0,0),(l1,0,10,300),0)                  #Dafinit la barre vertical
+    pygame.draw.rect(mafenetre, (255,0,0),(0,h1,300,10),0)                          #Définit la barre horizontal
+    pygame.draw.rect(mafenetre, (255,0,0),(l1,0,10,300),0)                           #Dafinit la barre vertical
     pygame.draw.rect(mafenetre , (255,255,255), (0 ,0 ,300 ,300), 5)        #Carré vide qui détoure la zone de jeu
 
 
