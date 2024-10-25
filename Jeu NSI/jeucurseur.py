@@ -79,7 +79,7 @@ while True:
 
     if h1==pos_h_carre and l1==pos_l_carre:     #Vérifie si le "curseur" à les meme coordonées que le carré
         score=score+1
-        son=pygame.mixer.Sound('bruitpointjeu.wav')
+        son=pygame.mixer.Sound("D:\\code\\resto_game\\Jeu NSI\\bruitpointjeu.wav")
         son.play(loops=0, maxtime=0, fade_ms=0)
         T2=temps_ecoule
         if T2-T1<3:
