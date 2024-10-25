@@ -110,8 +110,3 @@ while True:
             elif evenement.key == pygame.K_RIGHT and l1<290:    #Si on est dans la zone de jeu et qu'on appuis sur fleche droite, on déplace à droite la barre vertical
                 l1=l1+10
             deplacement=deplacement+1
-
-            for evenement in pygame.event.get():
-                if evenement.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
