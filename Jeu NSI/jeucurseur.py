@@ -10,7 +10,7 @@
 import pygame, sys
 from pygame.locals import *
 from random import randint
-from PIL import Image
+
 
 
 pygame.mixer.init()
@@ -18,7 +18,7 @@ pygame.init()
 
 # Création de l'objet fenêtre
 mafenetre=pygame.display.set_mode((300,350))
-pygame.display.set_caption('Exemples de rectangles')
+pygame.display.set_caption('Aimlab 2')
 mafenetre.fill((0,0,0))
 
 deplacement=0
@@ -28,6 +28,10 @@ score=0
 T1=1
 T2=7
 regeneration=True
+ 
+perso=pygame.image.load("sprite de base.png").convert_alpha()        #Charge l'image du perso et la convertit dans un type "reconnue ar pyhton".Alpha pour garder la transparence
+                                         
+
 
 
 police=pygame.font.Font(None,20)
@@ -42,9 +46,10 @@ while True:
 
     # Mise à jour de l'affichage de la fenêtre
     mafenetre.fill((0,0,0))
-    pygame.draw.rect(mafenetre, (255,0,0),(0,h1,300,10),0)                          #Définit la barre horizontal
-    pygame.draw.rect(mafenetre, (255,0,0),(l1,0,10,300),0)                           #Dafinit la barre vertical
+    mafenetre.blit(perso,(l1,h1))
+    
     pygame.draw.rect(mafenetre , (255,255,255), (0 ,0 ,300 ,300), 5)        #Carré vide qui détoure la zone de jeu
+    
 
 
     texte_score=police.render("Score : " + str(score) , True , (255,255,255))
@@ -57,6 +62,7 @@ while True:
     texte_deplacement=police.render("Tu es à "+str(deplacement)+" déplacements !", True, (255,255,255))
     position_deplacement=(100,315)
     mafenetre.blit(texte_deplacement,position_deplacement)
+
 
 
 
@@ -86,9 +92,9 @@ while True:
 
 
 
-
-    # Détection d'évènement(s)
     pygame.display.flip()
+    # Détection d'évènement(s)
+    
     for evenement in pygame.event.get():
         # Si l'utilisateur clique sur la fermeture de la fenêtre, on ferme pygame
         if evenement.type == pygame.QUIT:
@@ -104,15 +110,6 @@ while True:
             elif evenement.key == pygame.K_RIGHT and l1<290:    #Si on est dans la zone de jeu et qu'on appuis sur fleche droite, on déplace à droite la barre vertical
                 l1=l1+10
             deplacement=deplacement+1
-
-    if score >= 5:
-        while True:
-            pygame.display.flip()
-            mafenetre.fill((0,0,0))
-            text_ecran_fin = police.render (" Bravo tu as atteint " + str(score) + " points en " + str(temps_ecoule) + " secondes !" , True , (255,255,255) )
-            text_fin_dep = police.render ("En " + str(deplacement) + " déplacements !" , True , (255,255,255))
-            mafenetre.blit(text_ecran_fin,(20,150))
-            mafenetre.blit(text_fin_dep,(80,170))
 
             for evenement in pygame.event.get():
                 if evenement.type == pygame.QUIT:
